@@ -1,4 +1,4 @@
--- Todo App Database Schema
+-- Todo App Forever Database Schema
 -- Run this in Supabase SQL Editor
 
 CREATE TABLE todos (

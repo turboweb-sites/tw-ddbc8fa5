@@ -15,7 +15,7 @@ export default function Header({ onAddClick, completedCount, totalCount }: Heade
             <CheckCircle2 className="h-8 w-8 text-white" />
           </div>
           <div>
-            <h1 className="text-3xl font-bold text-white">Todo App</h1>
+            <h1 className="text-3xl font-bold text-white">Todo App Forever</h1>
             <p className="text-white/80">Управляйте своими задачами эффективно</p>
           </div>
         </div>

@@ -24,7 +24,7 @@ const previewStorage: Record<string, any[]> = {
   todos: [
     {
       id: '1',
-      title: 'Создать todo приложение',
+      title: 'Todo App Forever',
       description: 'Разработать современное приложение для управления задачами',
       completed: false,
       priority: 'high',
