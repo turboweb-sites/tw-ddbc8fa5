@@ -3,9 +3,9 @@ import { createClient } from '@supabase/supabase-js';
 // ⚠️ VALUES INJECTED BY TURBOWEB AT PUBLISH TIME
 // In preview: empty values (Supabase disabled)
 // In production: real values from environment
-const SUPABASE_URL = '__TURBOWEB_SUPABASE_URL__';
-const SUPABASE_ANON_KEY = '__TURBOWEB_SUPABASE_ANON_KEY__';
-const TABLE_PREFIX = '__TURBOWEB_TABLE_PREFIX__';
+const SUPABASE_URL = 'https://afmjwytlktwvrjwqorfh.supabase.co';
+const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFmbWp3eXRsa3R3dnJqd3FvcmZoIiwicm9sZSI6ImFub24iLCJpYXQiOjE3Njk0NTA3NDgsImV4cCI6MjA4NTAyNjc0OH0.DpYsshHSmmK5_1Jjjfk32cvllfyNgoyDq_Co85QnA-g';
+const TABLE_PREFIX = 'p_ddbc8fa5_1f82_4a42_b764_7eaf7634ff96_';
 
 // Create client (placeholder URL in preview mode)
 export const supabase = createClient(
