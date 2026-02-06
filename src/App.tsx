@@ -70,49 +70,53 @@ export default function App() {
 
   const completedCount = todos.filter(todo => todo.completed).length;
 
-  if (loading) {
-    return (
-      <div className="min-h-screen flex items-center justify-center">
-        <div className="glass-effect rounded-xl p-8">
-          <div className="animate-spin rounded-full h-12 w-12 border-4 border-white/20 border-t-white mx-auto mb-4"></div>
-          <p className="text-white text-center">Загрузка задач...</p>
-        </div>
-      </div>
-    );
-  }
-
   return (
-    <div className="min-h-screen p-4">
+    <div className="min-h-screen bg-gradient-to-br from-indigo-500 via-purple-500 to-pink-500 py-8 px-4">
       <div className="max-w-4xl mx-auto">
-        <Header
+        <Header 
           onAddClick={() => setShowAddForm(true)}
           completedCount={completedCount}
           totalCount={todos.length}
         />
 
         {error && (
-          <div className="mb-6 p-4 bg-red-100 border border-red-300 rounded-lg text-red-700">
-            {error}
-            <button 
-              onClick={() => setError(null)}
-              className="ml-4 text-red-500 hover:text-red-700"
-            >
-              ✕
-            </button>
+          <div className="glass-effect rounded-xl p-4 mb-4 border border-red-500/30 bg-red-500/10">
+            <p className="text-white font-medium">{error}</p>
           </div>
         )}
 
-        <TodoList
-          todos={todos}
-          onUpdate={handleUpdateTodo}
-          onDelete={handleDeleteTodo}
-        />
-
         {showAddForm && (
-          <AddTodoForm
-            onAdd={handleAddTodo}
+          <AddTodoForm 
+            onSubmit={handleAddTodo}
             onCancel={() => setShowAddForm(false)}
           />
+        )}
+
+        {loading ? (
+          <div className="glass-effect rounded-xl p-8 text-center">
+            <div className="inline-block animate-spin rounded-full h-12 w-12 border-4 border-white/30 border-t-white"></div>
+            <p className="text-white mt-4">Загрузка задач...</p>
+          </div>
+        ) : (
+          <TodoList 
+            todos={todos}
+            onUpdate={handleUpdateTodo}
+            onDelete={handleDeleteTodo}
+          />
+        )}
+
+        {!loading && todos.length === 0 && (
+          <div className="glass-effect rounded-xl p-12 text-center">
+            <div className="text-6xl mb-4">📝</div>
+            <h3 className="text-2xl font-bold text-white mb-2">Нет задач</h3>
+            <p className="text-white/60 mb-6">Начните с добавления вашей первой задачи!</p>
+            <button
+              onClick={() => setShowAddForm(true)}
+              className="btn-primary"
+            >
+              Добавить первую задачу
+            </button>
+          </div>
         )}
       </div>
     </div>

@@ -1,4 +1,4 @@
-import { CheckCircle2, Plus } from 'lucide-react';
+import { Plus } from 'lucide-react';
 
 interface HeaderProps {
   onAddClick: () => void;
@@ -11,8 +11,12 @@ export default function Header({ onAddClick, completedCount, totalCount }: Heade
     <header className="mb-8">
       <div className="flex items-center justify-between mb-6">
         <div className="flex items-center gap-3">
-          <div className="p-3 bg-gradient-to-r from-blue-500 to-purple-600 rounded-xl shadow-lg">
-            <img src="/logo.png" alt="Logo" className="h-8 w-8" />
+          <div className="p-2 bg-white rounded-xl shadow-lg">
+            <img 
+              src="http://localhost:5000/api/projects/ddbc8fa5-1f82-4a42-b764-7eaf7634ff96/assets/45416fd4-7fe4-46da-86ab-631221cac3cc"
+              alt="Todo App Forever Logo"
+              className="h-16 w-16 object-contain"
+            />
           </div>
           <div>
             <h1 className="text-3xl font-bold text-white">Todo App Forever</h1>
