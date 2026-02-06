@@ -12,7 +12,11 @@ export default function Header({ onAddClick, completedCount, totalCount }: Heade
       <div className="flex items-center justify-between mb-6">
         <div className="flex items-center gap-3">
           <div className="p-3 bg-gradient-to-r from-blue-500 to-purple-600 rounded-xl shadow-lg">
-            <CheckCircle2 className="h-8 w-8 text-white" />
+            <img 
+              src="http://localhost:5000/api/projects/ddbc8fa5-1f82-4a42-b764-7eaf7634ff96/assets/0879dece-de8a-4cb8-871e-20551328c84b" 
+              alt="QR Code Logo"
+              className="h-8 w-8 object-contain"
+            />
           </div>
           <div>
             <h1 className="text-3xl font-bold text-white">Todo App Forever</h1>
