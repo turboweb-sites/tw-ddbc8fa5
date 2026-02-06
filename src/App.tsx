@@ -74,7 +74,7 @@ export default function App() {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-purple-50 via-pink-50 to-blue-50 flex flex-col">
-      <Header />
+      <Header onAddClick={() => setShowAddForm(!showAddForm)} completedCount={completedCount} totalCount={totalCount} />
       
       <main className="flex-grow max-w-4xl mx-auto px-4 py-8 w-full">
         {error && (
@@ -112,7 +112,7 @@ export default function App() {
 
         {showAddForm && (
           <div className="mb-6">
-            <AddTodoForm onSubmit={handleAddTodo} onCancel={() => setShowAddForm(false)} />
+            <AddTodoForm onAdd={handleAddTodo} onCancel={() => setShowAddForm(false)} />
           </div>
         )}
 
